@@ -23,7 +23,7 @@ describe RecipesController do
   # This should return the minimal set of attributes required to create a valid
   # Recipe. As you add validations to Recipe, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "title" => "MyText" } }
+  let(:valid_attributes) { { "title" => "MyString", "coffee" => "18", "water" => "220", "seconds" => "90", "description" => "My everyday coffee recipe" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in

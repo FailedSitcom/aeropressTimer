@@ -2,6 +2,8 @@
   <h1>All of the Recipes</h1>
 </div>
 
+<%= link_to "Post a New Recipe", new_recipe_path, class: "btn btn-success" %>
+
 <% @recipes.each do |recipe| %>
 <div class ="recipe">
   <strong><%= recipe.title %></strong>

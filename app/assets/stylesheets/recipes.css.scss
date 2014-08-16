@@ -1,3 +1,24 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recipe {
+  border-bottom: solid 1px #CCC;
+  padding: 5px 0;
+}
+
+.recipe p {
+  padding: 4px 0;
+}
+
+.recipe.hover {
+  background: #FAFAFA;
+}
+
+.recipe .admin {
+  display: none;
+}
+
+.recipe.hover .admin {
+  display: inline;
+}

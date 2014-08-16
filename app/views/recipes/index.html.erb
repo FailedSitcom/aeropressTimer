@@ -1,36 +1,18 @@
-<h1>Listing recipes</h1>
+<div class="page-header">
+  <h1>All of the Recipes</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Coffee</th>
-      <th>Water</th>
-      <th>Seconds</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @recipes.each do |recipe| %>
+<div class ="recipe">
+  <strong><%= recipe.title %></strong>
+  <p><%= recipe.description %></p>
+  <div class="meta">
+    <%= link_to "Show", recipe %>
+    <span class ="admin">
+      <%= link_to "Edit", edit_recipe_path(recipe) %>
+      <%= link_to "Delete", recipe, method: :delete, data: { confirm: "Are you sure you want to delete this recipe?" } %>
+    </span>
+  </div>
+</div>
 
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr id="<%= dom_id(recipe) %>">
-        <td><%= recipe.title %></td>
-        <td><%= recipe.coffee %></td>
-        <td><%= recipe.water %></td>
-        <td><%= recipe.seconds %></td>
-        <td><%= recipe.description %></td>
-        <td>
-          <%= link_to "Recipe Items", recipe_recipe_items_path(recipe) %>
-          <%= link_to 'Show', recipe %>
-          <%= link_to 'Edit', edit_recipe_path(recipe) %>
-          <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Recipe', new_recipe_path %>
+<% end %>

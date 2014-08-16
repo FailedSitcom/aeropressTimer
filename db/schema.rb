@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140815191759) do
 
-  create_table "recipe_items", force: true do |t|
-    t.integer  "recipe_id"
-    t.string   "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "recipe_items", ["recipe_id"], name: "index_recipe_items_on_recipe_id"
-
   create_table "recipes", force: true do |t|
     t.text     "title"
     t.integer  "coffee"

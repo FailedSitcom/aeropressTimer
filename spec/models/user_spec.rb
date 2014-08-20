@@ -10,6 +10,12 @@ describe User do
       password_confirmation: "securepassword1234"
     }
   }
+
+  context "relationships" do
+    it { should have_many(:recipes) }
+  end
+
+
   context "validations" do
     let(:user) { User.new(valid_attributes) }
 

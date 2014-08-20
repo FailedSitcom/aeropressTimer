@@ -14,7 +14,6 @@ describe UserSessionsController do
     end
   end
 
-
   describe "POST 'create'" do
     context "with correct credentials" do
       let!(:user) { User.create(first_name: "Samuel", last_name: "Durkin", email: "sam.thomas.durkin@gmail.com", password: "password1234", password_confirmation: "password1234" ) }
@@ -49,7 +48,7 @@ describe UserSessionsController do
 
     shared_examples_for "denied login" do
       it "renders the new template" do
-        post :create, email: email, password: password
+        post :create
         expect(response).to render_template('new')
       end
 
@@ -60,25 +59,24 @@ describe UserSessionsController do
     end
 
     context "with blank credentials" do
-      let(:email) {""}
-      let(:password) {""}
+      let(:email) { "" }
+      let(:password) { "" }
       it_behaves_like "denied login"
     end
 
     context "with an incorrect password" do
       let!(:user) { User.create(first_name: "Samuel", last_name: "Durkin", email: "sam.thomas.durkin@gmail.com", password: "password1234", password_confirmation: "password1234" ) }
       let(:email) {user.email}
-      let(:password) {"password123"}
+      let(:password) {"password1234"}
       it_behaves_like "denied login"
     end
 
 
     context "with no email in existence" do
       let(:email) {"nobody@nobody.com"}
-      let(:password) {"password123"}
+      let(:password) {"password1234"}
       it_behaves_like "denied login"
     end
-
 
   end
 end

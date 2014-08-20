@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe "Editing recipes" do
-  let!(:recipe) { Recipe.create(title: "Koppi", coffee: "18", water: "220", seconds: "90", description: "My everyday coffee recipe")
-}
+  let(:user) { recipe.user }
+  let!(:recipe) { create(:recipe) }
 
   def update_recipe(options={})
     options[:title] ||="Koppi"
@@ -24,6 +24,10 @@ describe "Editing recipes" do
     fill_in "Seconds", with: options[:seconds]
     fill_in "Description", with: options[:description]
     click_button "Update Recipe"
+  end
+
+  before do
+    sign_in recipe.user, password: "password1234"
   end
 
   it "updates a recipe successfully with correct information" do

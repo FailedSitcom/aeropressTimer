@@ -1,8 +1,12 @@
 require 'spec_helper'
 
 describe "Deleting recipes" do
-  let!(:recipe) { Recipe.create(title: "Koppi", coffee: "18", water: "220", seconds: "90", description: "My everyday coffee recipe")
-}
+  let(:user) { recipe.user }
+  let!(:recipe) { create(:recipe) }
+
+  before do
+    sign_in user, password: "password1234"
+  end
 
   it "is successful when clicking the destroy link" do
     visit "/recipes"

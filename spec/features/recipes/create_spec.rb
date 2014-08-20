@@ -2,6 +2,7 @@ require 'spec_helper'
 
 
 describe "Creating recipes" do
+  let(:user) { create(:user) }
   def create_recipe(options={})
     options[:title] ||="Koppi"
     options[:coffee] ||="18"
@@ -21,9 +22,12 @@ describe "Creating recipes" do
     click_button "Create Recipe"
   end
 
+  before do
+    sign_in user, password: "password1234"
+  end
+
   it "redirects to the recipe index page on success" do
     create_recipe
-
     expect(page).to have_content("Koppi")
   end
 

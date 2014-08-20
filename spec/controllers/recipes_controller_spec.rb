@@ -29,12 +29,20 @@ describe RecipesController do
   # in order to pass any filters (e.g. authentication) defined in
   # RecipesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+  let!(:user) { create(:user) }
+
+
+  before do
+    sign_in(user)
+  end
 
   describe "GET index" do
-    it "assigns all recipes as @recipes" do
-      recipe = Recipe.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:recipes).should eq([recipe])
+    context "logged in" do
+      it "assigns all recipes as @recipes" do
+        recipe = Recipe.create! valid_attributes
+        get :index, {}, valid_session
+        assigns(:recipes).should eq([recipe])
+      end
     end
   end
 
@@ -78,6 +86,12 @@ describe RecipesController do
       it "redirects to the created recipe" do
         post :create, {:recipe => valid_attributes}, valid_session
         response.should redirect_to(Recipe.last)
+      end
+
+      it "creates a todo list for the current user" do
+        post :create, {:recipe => valid_attributes}, valid_session
+        recipe = Recipe.last
+        expect(recipe.user).to eq(user)
       end
     end
 

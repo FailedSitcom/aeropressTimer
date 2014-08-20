@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Recipe do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "relationships" do
+    it { should belong_to(:user) }
+  end
 end

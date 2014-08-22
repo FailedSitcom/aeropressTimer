@@ -1,19 +1,16 @@
-<h1>Recipes</h1>
+<h2 class="page-title">Recipes</h2>
 
+
+<ul class="recipes no-bullet">
 
 <% @recipes.each do |recipe| %>
-<div class="recipe" id="<%= dom_id(recipe) %>"
-  <h2><%= recipe.title %></h2>
-  <p><%= recipe.description %></p>
-  <ul class="functions">
-    <li><%= link_to 'Show', recipe %></li>
-    <li><%= link_to 'Edit', edit_recipe_path(recipe) %></li>
-    <li><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-  </ul>
-  <br class="clear" />
-</div>
-<% end %>
 
-<br>
+  <li id="<%= dom_id(recipe) %>" class="clearfix">
+    <%= link_to recipe, class: "row" do %>
+      <div class="small-10 medium-11 columns truncate" title="<%= recipe.title %>"><%= recipe.title %></div>
+    <% end %>
+  </li>
+<% end %>
+</ul>
 
 <%= link_to 'New Recipe', new_recipe_path %>

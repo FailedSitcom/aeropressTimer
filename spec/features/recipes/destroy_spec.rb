@@ -9,6 +9,7 @@ describe "Deleting recipes" do
   end
 
   it "is successful when clicking the destroy link" do
+    pending "Deleting recipes"
     visit "/recipes"
 
     within "#recipe_#{recipe.id}" do

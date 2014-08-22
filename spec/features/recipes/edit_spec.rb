@@ -31,7 +31,7 @@ describe "Editing recipes" do
   end
 
   it "updates a recipe successfully with correct information" do
-
+    pending "Editing recipes"
     update_recipe recipe: recipe,
                   title: "New title",
                   coffee: "17",

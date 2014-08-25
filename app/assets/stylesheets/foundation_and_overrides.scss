@@ -41,7 +41,7 @@
 // Global
 
 // We use these to control various global styles
-// $body-bg: #fff;
+   $body-bg: #ecf0f1;
 // $body-font-color: #222;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: $font-weight-normal;
@@ -56,7 +56,7 @@
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+   $primary-color: rgb(68, 71, 109);
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -64,7 +64,7 @@
 // $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
-// $global-radius: 3px;
+   $global-radius: 8px;
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -150,7 +150,7 @@
 
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
-// $paragraph-font-weight: $font-weight-normal;
+   $paragraph-font-weight: bold;
 // $paragraph-font-size: 1rem;
 // $paragraph-line-height: 1.6;
 // $paragraph-margin-bottom: rem-calc(20);
@@ -182,7 +182,7 @@
 // $list-line-height: $paragraph-line-height;
 // $list-margin-bottom: $paragraph-margin-bottom;
 // $list-style-position: outside;
-// $list-side-margin: 1.1rem;
+   $list-side-margin: 0;
 // $list-ordered-side-margin: 1.4rem;
 // $list-side-margin-no-bullet: 0;
 // $list-nested-margin: rem-calc(20);
@@ -352,7 +352,7 @@
 // $button-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: -20%;
+   $button-function-factor: +20%;
 
 // We use these to control button border styles.
 // $button-border-width: 0px;
@@ -651,8 +651,8 @@
 // $label-radius: $global-radius;
 
 // We use these to style the label text
-// $label-font-sizing: rem-calc(11);
-// $label-font-weight: $font-weight-normal;
+   $label-font-sizing: rem-calc(13);
+   $label-font-weight: bold;
 // $label-font-color: #333;
 // $label-font-color-alt: #fff;
 // $label-font-family: $body-font-family;
@@ -921,8 +921,8 @@
 // $reveal-box-shadow: 0 0 10px rgba(#000,.4);
 
 // We use these to style the reveal close button
-// $reveal-close-font-size: rem-calc(40);
-// $reveal-close-top: rem-calc(8);
+   $reveal-close-font-size: rem-calc(30);
+   $reveal-close-top: rem-calc(0);
 // $reveal-close-side: rem-calc(11);
 // $reveal-close-color: #aaa;
 // $reveal-close-weight: $font-weight-bold;
@@ -932,7 +932,7 @@
 // $reveal-round: $global-rounded;
 
 // We use these to control the modal border
-// $reveal-border-style: solid;
+   $reveal-border-style: none;
 // $reveal-border-width: 1px;
 // $reveal-border-color: #666;
 

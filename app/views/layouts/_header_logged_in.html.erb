@@ -1,3 +1,9 @@
-<div class="small-12 columns">
-  <h1 class="logo"><%= link_to "AeropressTimer", root_path, class: "hide-text" %></h1>
+<div class="small-4 columns header-icon">
+  <%= link_to "Sign Out", logout_path, method: :delete, class: "icon-signout hide-text" %>
+</div>
+<div class="small-4 columns">
+  <h1 class="logo"><%= link_to "AeropressTimer", recipes_path, class: "hide-text" %></h1>
+</div>
+<div class="small-4 columns header-icon">
+  <%= new_recipe_link %>
 </div>

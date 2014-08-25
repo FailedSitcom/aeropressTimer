@@ -14,14 +14,23 @@
   <%= render partial: "layouts/flash" %>
 
 
-  <header>
-    
-    <%= link_to "Sign In", new_user_session_path %>
-    <%= link_to "Sign Up", new_user_path %>
-
+  <header class="row global-header">
+    <div class="small-12 small-centered columns">
+      <%= link_to "Recipes", recipes_path %>
+    </div>
   </header>
 
-  <%= yield %>
+  <div class="row">
+    <div class="small-12 small-centered columns">
+      <%= yield %>
+    </div>
+  </div>
+
+  <footer class="row global-footer">
+    <div class="small-12 small-centered columns">
+      <%= link_to "Already have an account? Sign in.", login_path %>
+    </div>
+  <footer>
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :require_user
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_back_link, except: [:index]
   # GET /recipes
   # GET /recipes.json
   def index
@@ -62,6 +63,9 @@ class RecipesController < ApplicationController
   end
 
   private
+    def set_back_link
+      go_back_link_to recipes_path
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
       @recipe = Recipe.find(params[:id])

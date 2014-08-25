@@ -1,5 +1,5 @@
 @mixin icon($asset) {
-  background: url(asset_path(#{asset})) no-repeat center center;
+  background: url(asset_path(#{$asset})) no-repeat center center;
   background-size: contain;
   display: block;
   width: 24px;

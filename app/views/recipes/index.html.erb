@@ -1,6 +1,4 @@
-<% title "Recipes" %>
-
-<h2 class="page-title">Recipes</h2>
+<%= title "Recipes" %>
 <ul class="recipes no-bullet">
 <% @recipes.each do |recipe| %>
   <li id="<%= dom_id(recipe) %>" class="clearfix">

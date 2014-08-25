@@ -16,18 +16,14 @@
 
   <header class="row global-header">
     <div class="small-12 small-centered columns">
-      <%= link_to "Recipes", recipes_path %>
+      <%= render partial: "layouts/header_logged_out" %>
     </div>
   </header>
 
-  <div class="row">
-    <div class="small-12 small-centered columns">
-      <%= yield %>
-    </div>
-  </div>
+  <%= yield %>
 
   <footer class="row global-footer">
-    <div class="small-12 small-centered columns">
+    <div class="small-12 small-centered columns text-center">
       <%= link_to "Already have an account? Sign in.", login_path %>
     </div>
   <footer>

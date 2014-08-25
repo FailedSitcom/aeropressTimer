@@ -12,7 +12,7 @@ describe "Creating recipes" do
 
     visit "/recipes"
     click_link "New Recipe"
-    expect(page).to have_content("New recipe")
+    expect(page).to have_content("New Recipe")
 
     fill_in "Title", with: options[:title]
     fill_in "Coffee", with: options[:coffee]

@@ -11,27 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_area :title %>
-  </div>
-  <div class="field">
-    <%= f.label :coffee %><br>
-    <%= f.number_field :coffee %>
-  </div>
-  <div class="field">
-    <%= f.label :water %><br>
-    <%= f.number_field :water %>
-  </div>
-  <div class="field">
-    <%= f.label :seconds %><br>
-    <%= f.number_field :seconds %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <%= f.label :title, label: "Recipe Title", autofocus: "autofocus" %>
+  <%= f.text_area :title %>
+  <%= f.label :coffee %>
+  <%= f.number_field :coffee %>
+  <%= f.label :water %>
+  <%= f.number_field :water %>
+  <%= f.label :seconds %>
+  <%= f.number_field :seconds %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.submit "Save", class: "button radius expand" %>
+    </div>
   </div>
 <% end %>

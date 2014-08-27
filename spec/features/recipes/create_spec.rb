@@ -11,8 +11,8 @@ describe "Creating recipes" do
     options[:description] ||="My everyday coffee recipe"
 
     visit "/recipes"
-    click_link "New Recipe"
-    expect(page).to have_content("New Recipe")
+    click_link "Add Recipe"
+    expect(page).to have_content("Add Recipe")
 
     fill_in "Title", with: options[:title]
     fill_in "Coffee", with: options[:coffee]

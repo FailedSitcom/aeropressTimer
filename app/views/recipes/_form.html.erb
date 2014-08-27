@@ -1,34 +1,11 @@
-<%= form_for(@recipe) do |f| %>
-  <% if @recipe.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+<%= form_for(@recipe, builder: FoundationFormBuilder) do |f| %>
 
-      <ul>
-      <% @recipe.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.text_field :title, label: "Recipe Title", autofocus: "autofocus" %>
+  <%= f.number_field :coffee %>
+  <%= f.number_field :water %>
+  <%= f.number_field :seconds %>
+  <%= f.text_field :description %>
 
-  <div class="row">
-    <div class="small-12 columns">
-      <%= f.label :title, label: "Recipe Title", autofocus: "autofocus" %>
-      <%= f.text_area :title %>
-      <%= f.label :coffee %>
-      <%= f.number_field :coffee %>
-      <%= f.label :water %>
-      <%= f.number_field :water %>
-      <%= f.label :seconds %>
-      <%= f.number_field :seconds %>
-      <%= f.label :description %>
-      <%= f.text_area :description %>
-    </div>
-  </div>
+  <%= f.submit "Save", class: "button radius expand" %>
 
-  <div class="row">
-    <div class="small-12 columns">
-      <%= f.submit "Save", class: "button radius expand" %>
-    </div>
-  </div>
 <% end %>

@@ -19,7 +19,7 @@ describe "Creating recipes" do
     fill_in "Water", with: options[:water]
     fill_in "Seconds", with: options[:seconds]
     fill_in "Description", with: options[:description]
-    click_button "Create Recipe"
+    click_button "Save"
   end
 
   before do

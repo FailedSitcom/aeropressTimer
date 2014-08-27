@@ -11,16 +11,20 @@
     </div>
   <% end %>
 
-  <%= f.label :title, label: "Recipe Title", autofocus: "autofocus" %>
-  <%= f.text_area :title %>
-  <%= f.label :coffee %>
-  <%= f.number_field :coffee %>
-  <%= f.label :water %>
-  <%= f.number_field :water %>
-  <%= f.label :seconds %>
-  <%= f.number_field :seconds %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= f.label :title, label: "Recipe Title", autofocus: "autofocus" %>
+      <%= f.text_area :title %>
+      <%= f.label :coffee %>
+      <%= f.number_field :coffee %>
+      <%= f.label :water %>
+      <%= f.number_field :water %>
+      <%= f.label :seconds %>
+      <%= f.number_field :seconds %>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+  </div>
 
   <div class="row">
     <div class="small-12 columns">

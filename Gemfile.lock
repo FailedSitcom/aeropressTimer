@@ -54,6 +54,8 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    font-awesome-rails (4.1.0.0)
+      railties (>= 3.2, < 5.0)
     foundation-rails (5.2.3.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
@@ -165,6 +167,7 @@ DEPENDENCIES
   capybara-email (~> 2.2.0)
   coffee-rails (~> 4.0.0)
   factory_girl_rails (~> 4.0)
+  font-awesome-rails (~> 4.1.0.0)
   foundation-rails (~> 5.2.2)
   jbuilder (~> 2.0)
   jquery-rails

@@ -36,7 +36,7 @@ describe "Creating recipes" do
 
     create_recipe title: ""
 
-    expect(page).to have_content("error")
+    expect(page).to have_content(/can't be blank/i)
     expect(Recipe.count).to eq(0)
 
     visit "/recipes"
@@ -48,7 +48,7 @@ describe "Creating recipes" do
 
     create_recipe coffee: ""
 
-    expect(page).to have_content("error")
+    expect(page).to have_content(/can't be blank/i)
     expect(Recipe.count).to eq(0)
 
     visit "/recipes"
@@ -60,7 +60,7 @@ describe "Creating recipes" do
 
     create_recipe water: ""
 
-    expect(page).to have_content("error")
+    expect(page).to have_content(/can't be blank/i)
     expect(Recipe.count).to eq(0)
 
     visit "/recipes"
@@ -72,7 +72,7 @@ describe "Creating recipes" do
 
     create_recipe seconds: ""
 
-    expect(page).to have_content("error")
+    expect(page).to have_content(/can't be blank/i)
     expect(Recipe.count).to eq(0)
 
     visit "/recipes"
@@ -85,7 +85,7 @@ describe "Creating recipes" do
 
     create_recipe description: ""
 
-    expect(page).to have_content("error")
+    expect(page).to have_content(/can't be blank/i)
     expect(Recipe.count).to eq(0)
 
     visit "/recipes"

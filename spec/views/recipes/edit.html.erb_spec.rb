@@ -16,11 +16,11 @@ describe "recipes/edit" do
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form[action=?][method=?]", recipe_path(@recipe), "post" do
-      assert_select "textarea#recipe_title[name=?]", "recipe[title]"
+      assert_select "input#recipe_title[name=?]", "recipe[title]"
       assert_select "input#recipe_coffee[name=?]", "recipe[coffee]"
       assert_select "input#recipe_water[name=?]", "recipe[water]"
       assert_select "input#recipe_seconds[name=?]", "recipe[seconds]"
-      assert_select "textarea#recipe_description[name=?]", "recipe[description]"
+      assert_select "input#recipe_description[name=?]", "recipe[description]"
     end
   end
 end

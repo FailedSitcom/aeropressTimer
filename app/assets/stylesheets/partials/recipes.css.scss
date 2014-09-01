@@ -21,3 +21,16 @@
     clear: both;
   }
 }
+
+.fa-caret-down, .fa-caret-up {
+  color: white;
+  padding-top: 20px;
+}
+
+.recipe-title {
+  background: $orange;
+}
+
+.recipe-title h2 {
+  margin: 0;
+}

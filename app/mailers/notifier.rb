@@ -7,4 +7,10 @@ class Notifier < ActionMailer::Base
     mail(to: "#{user.first_name} #{user.last_name} <#{user.email}>",
          subject: "Reset Your Password")
   end
+
+  def recipe(recipe, destination)
+    @user = recipe.user
+    @recipe = recipe
+    mail(to: destination, subject: "#{@user.first_name} sent you a coffee recipe")
+  end
 end

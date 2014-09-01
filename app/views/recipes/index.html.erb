@@ -1,10 +1,24 @@
 <%= title "Recipes" %>
-<ul class="recipes no-bullet">
-<% @recipes.each do |recipe| %>
-  <li id="<%= dom_id(recipe) %>" class="clearfix">
-    <%= link_to recipe, class: "row" do %>
-      <div class="small-10 medium-11 columns truncate" title="<%= recipe.title %>"><%= recipe.title %></div>
-    <% end %>
-  </li>
+
+
+<% if @recipes.size > 0 %>
+  <ul class="recipes no-bullet">
+  <% @recipes.each do |recipe| %>
+    <li id="<%= dom_id(recipe) %>" class="clearfix">
+      <%= link_to recipe, class: "row" do %>
+        <div class="small-10 medium-11 columns truncate" title="<%= recipe.title %>"><%= recipe.title %></div>
+      <% end %>
+    </li>
+  <% end %>
+  </ul>
+
+<% else %>
+
+  <div class="row blank-slate">
+    <div class="small-12 small-centered columns">
+      <p>You don't have any recipes!</p>
+      <%= link_to "Add Recipe", new_recipe_path, class: "button radius" %>
+    </div>
+  </div>
+
 <% end %>
-</ul>

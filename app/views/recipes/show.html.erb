@@ -1,5 +1,25 @@
 <%= title @recipe.title %>
 
+<div class="row" id="recipe-functions">
+  <div class="small-4 columns">
+    <%= link_to edit_recipe_path(@recipe), class: "button expand radius outline" do %>
+    <span class="fa fa-edit"></span>
+    Edit
+    <% end %>
+  </div>
+  <div class="small-4 columns">
+    <%= link_to edit_recipe_path(@recipe), class: "button expand radius outline", data: { "reveal-id" => "email=modal" } do %>
+    <span class="fa fa-envelope-o"></span>
+    Email
+    <% end %>
+  </div>
+  <div class="small-4 columns">
+    <%= link_to recipes_path(@recipe), class: "button expand radius outline alert", method: :delete, data: {confirm: "Are you sure you want to delete this recipe? There is no undo."} do %>
+    <span class="fa fa-trash-o"></span>
+    Delete
+    <% end %>
+  </div>
+</div>
 
 <p>
   <strong>Coffee:</strong>

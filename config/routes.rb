@@ -8,7 +8,15 @@ Rails.application.routes.draw do
   resources :user_sessions, only: [:new, :create]
   resources :password_resets, only: [:new, :create, :edit, :update]
 
-  resources :recipes
+  resources :recipes do
+    put :email, on: :member
+    resources :recipe do
+      member do
+        patch :complete
+      end
+    end
+  end
+
   root 'pages#home'
 
 

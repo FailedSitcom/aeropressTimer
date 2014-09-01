@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :require_user
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :email]
   before_action :set_back_link, except: [:index]
   # GET /recipes
   # GET /recipes.json
@@ -59,6 +59,16 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def email
+    destination = params[:to]
+    notifier = Notifier.recipe(@recipe, destination)
+    if destination =~ /@/ && notifier.deliver
+      redirect_to recipe_path(@recipe), success: "Recipe sent."
+    else
+      redirect_to recipe_path(@recipe), failure: "Recipe could not be sent."
     end
   end
 

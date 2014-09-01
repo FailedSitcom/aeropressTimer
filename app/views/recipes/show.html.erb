@@ -16,7 +16,7 @@
     <% end %>
   </div>
   <div class="small-4 columns">
-    <%= link_to edit_recipe_path(@recipe), class: "button expand radius outline", data: { "reveal-id" => "email=modal" } do %>
+    <%= link_to edit_recipe_path(@recipe), class: "button expand radius outline", data: { "reveal-id" => "email-modal" } do %>
     <span class="fa fa-envelope-o"></span>
     Email
     <% end %>
@@ -48,3 +48,14 @@
   <strong>Description:</strong>
   <%= @recipe.description %>
 </p>
+
+
+<div id="email-modal" class="reveal-modal tiny" data-reveal>
+  <a class="close-reveal-modal">&#215;</a>
+  <%= form_tag email_recipe_path(@recipe), method: :put do %>
+    <%= label_tag :destination, "what email address would you like to send this to?" %>
+    <%= text_field_tag :destination %>
+    <br />
+    <%= submit_tag "Send Recipe", class: "button radius medium expand submit" %>
+  <% end %>
+</div>

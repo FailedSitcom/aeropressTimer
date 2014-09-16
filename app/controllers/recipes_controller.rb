@@ -29,7 +29,7 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
+        format.html { redirect_to @recipe, success: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @recipe }
       else
         format.html { render :new }
@@ -68,7 +68,7 @@ class RecipesController < ApplicationController
     if destination =~ /@/ && notifier.deliver
       redirect_to recipe_path(@recipe), success: "Recipe sent."
     else
-      redirect_to recipe_path(@recipe), failure: "Recipe could not be sent."
+      redirect_to recipe_path(@recipe), error: "Recipe could not be sent."
     end
   end
 

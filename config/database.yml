@@ -7,17 +7,26 @@
 
 development:
   adapter: postgresql
+  encoding: unicode
   database: coffeefilter_development
   pool: 5
   timeout: 5000
+  username:
+  password:
+  host: localhost
 test:
   adapter: postgresql
   database: coffeefilter_test
   pool: 5
   timeout: 5000
-
+  username:
+  password:
+  host: localhost
 production:
   adapter: postgresql
   database: coffeefilter_production
   pool: 5
   timeout: 5000
+  username:
+  password:
+  host: localhost

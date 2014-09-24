@@ -2,10 +2,14 @@
 
 
 <% if @recipes.size > 0 %>
-  <ul class="recipes no-bullet">
-    <% @recipes.each do |recipe| %>
-      <%= render partial: "recipe", collection: @recipes %>
-    <% end %>
+  <ul class="list recipes no-bullet">
+    <div class="row">
+      <div class="small-12 text-center columns">
+        <div class="index">
+          <%= render partial: "recipe", collection: @recipes %>
+        </div>
+      </div>
+    </div>
   </ul>
 
 <% else %>

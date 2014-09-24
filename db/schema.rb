@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140820160053) do
+ActiveRecord::Schema.define(version: 20140919094424) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "recipes", force: true do |t|
     t.text     "title"
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140820160053) do
     t.integer  "user_id"
   end
 
-  add_index "recipes", ["user_id"], name: "index_recipes_on_user_id"
+  add_index "recipes", ["user_id"], name: "index_recipes_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -36,7 +39,13 @@ ActiveRecord::Schema.define(version: 20140820160053) do
     t.string   "password_reset_token"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email"
-  add_index "users", ["password_reset_token"], name: "index_users_on_password_reset_token"
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["password_reset_token"], name: "index_users_on_password_reset_token", using: :btree
+
+  create_table "videos", force: true do |t|
+    t.text     "video"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

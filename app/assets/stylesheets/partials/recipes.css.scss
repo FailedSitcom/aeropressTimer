@@ -5,8 +5,8 @@
 
 #recipe-functions .outline {
   background: none;
-  color: $blue;
-  border: 1px solid $blue;
+  color: rgb(64, 39, 24);
+  border: 1px solid rgb(64, 39, 24);
   &.alert {
     border-color: red;
     color: red;
@@ -28,9 +28,105 @@
 }
 
 .recipe-title {
-  background: $orange;
+  background: #D94625;
 }
 
 .recipe-title h2 {
   margin: 0;
+}
+
+.coffee {
+  background: #402718;
+  margin: 0;
+  padding: 5px 0;
+  border-bottom: 3px solid #D94625;
+}
+
+.water {
+  background: #402718;
+  margin: 0 0 40px 0;
+  padding: 5px 0;
+  border-bottom: 3px solid #D94625;
+}
+
+.seconds {
+  background: #402718;
+  margin: 0;
+  padding: 5px 0;
+  border-bottom: 3px solid #D94625;
+}
+
+.recipe {
+  padding: 0;
+  margin: 0;
+}
+
+.description {
+  padding: 15px 10px 100px 10px;
+  background: #FFF;
+}
+
+.recipe h3 {
+  color: #FFF;
+  padding: 0;
+}
+
+.recipe h5 {
+  color: #FFF;
+}
+
+.recipe h4 {
+  color: #F2DCB3;
+}
+
+.title h4 {
+  color: #FFF;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  margin: 0;
+}
+
+
+.start {
+  background: $red;
+  border: 2px solid #D94625;
+}
+
+.pause {
+  background: #17A697;
+  border: 2px solid #17A697;
+}
+
+.countdown {
+  padding: 20px 0;
+  background: #D98723;
+}
+
+.countdown-amount {
+  color: $red;
+}
+
+.countdown-holding span {
+  color: #402718;
+}
+
+.is-countdown {
+  background: #D98723;
+  border: 0;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.button:hover {
+  background: #F2DCB3;
+}
+
+#recipe-functions {
+  padding-bottom: 10px;
 }

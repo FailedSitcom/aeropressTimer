@@ -1,3 +1,31 @@
+<script>
+var timer = '<%= @recipe.seconds %>'
+
+
+</script>
+
+<script>
+jQuery(document).on("ready page:load", function() {
+  $(function () {
+    $('#defaultCountdown').countdown({until: timer, format: 'MS'});
+
+    $('#defaultCountdown').countdown('pause')
+
+    $("#pause").click(function() {
+      $('#defaultCountdown').countdown('toggle')
+    });
+  });
+  $( "#start" ).click(function() {
+    $('#defaultCountdown').countdown('resume')
+    setTimeout(function() { $('#defaultCountdown').countdown('option','until', timer)})
+  });
+});
+
+
+</script>
+
+
+
 <%= content_for(:title) do %><%= @recipe.title %> | <% end %>
 <div class="row collapse recipe-title">
   <div class="small-11 columns">
@@ -29,26 +57,49 @@
   </div>
 </div>
 
-<p>
-  <strong>Coffee:</strong>
-  <%= @recipe.coffee %>
-</p>
+  <div class="row">
+    <div class="small-12 columns countdown">
 
-<p>
-  <strong>Water:</strong>
-  <%= @recipe.water %>
-</p>
+      <div id="defaultCountdown"></div>
+    </div>
 
-<p>
-  <strong>Seconds:</strong>
-  <%= @recipe.seconds %>
-</p>
+  <div class="row">
+    <div class="small-12 columns description">
+      <div class="text-center">
+        <%= @recipe.description %>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @recipe.description %>
-</p>
+  <div class="row">
+    <div class="small-6 start button text-center columns" id="start">
+      <h4>Start/Reset</h4>
+    </div>
 
+    <div class="small-6 pause button text-center columns" id="pause">
+      <h4>Pause/Resume</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-4 columns recipe">
+      <div class="text-center expand coffee"><h4>Coffee</h4>
+      <h3><%= @recipe.coffee %></h3> <h5>grams</h5>
+      </div>
+    </div>
+
+    <div class="small-4 columns recipe">
+      <div class="text-center expand water"><h4>Water</h4>
+      <h3><%= @recipe.water %></h3> <h5>ml</h5>
+      </div>
+    </div>
+
+    <div class="small-4 columns recipe">
+      <div class="text-center expand seconds"><h4>Brew</h4>
+      <h3><%= @recipe.seconds %></h3> <h5>seconds</h5>
+      </div>
+    </div>
+  </div>
 
 <div id="email-modal" class="reveal-modal tiny" data-reveal>
   <a class="close-reveal-modal">&#215;</a>

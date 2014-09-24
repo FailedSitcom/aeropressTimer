@@ -9,6 +9,8 @@ jQuery(document).on("ready page:load", function() {
   $(function () {
     $('#defaultCountdown').countdown({until: timer, format: 'MS'});
 
+
+
     $('#defaultCountdown').countdown('pause')
 
     $("#pause").click(function() {
@@ -20,7 +22,6 @@ jQuery(document).on("ready page:load", function() {
     setTimeout(function() { $('#defaultCountdown').countdown('option','until', timer)})
   });
 });
-
 
 </script>
 

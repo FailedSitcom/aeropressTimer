@@ -4,12 +4,17 @@
 <% if @recipes.size > 0 %>
   <ul class="list recipes no-bullet">
     <div class="row">
-      <div class="small-12 text-center columns">
-        <div class="index">
-          <%= render partial: "recipe", collection: @recipes %>
-        </div>
-      </div>
+      <div class="small-4 columns truncate">Title</div>
+      <div class="small-4 columns truncate">Coffee</div>
+      <div class="small-4 columns truncate">Water</div>
     </div>
+
+
+    <div class="index">
+      <%= render partial: "recipe", collection: @recipes %>
+    </div>
+
+
   </ul>
 
 <% else %>

@@ -1,9 +1,9 @@
 <%= form_for(@recipe, builder: FoundationFormBuilder) do |f| %>
 
   <%= f.text_field :title, label: "Recipe Title", autofocus: "autofocus" %>
-  <%= f.number_field :coffee %>
-  <%= f.number_field :water %>
-  <%= f.number_field :seconds %>
+  <%= f.number_field :coffee, label: "Coffee (grams)" %>
+  <%= f.number_field :water, label: "Water (ml)" %>
+  <%= f.number_field :seconds, label: "Brewing time (seconds)" %>
   <%= f.text_field :description %>
 
   <%= f.submit "Save", class: "button radius expand" %>

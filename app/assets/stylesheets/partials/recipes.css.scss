@@ -123,8 +123,12 @@
   font-size: 1.5em;
 }
 
-.button:hover {
-  background: #F2DCB3;
+#start:hover  {
+  background: lighten($red, 10%);
+}
+
+#pause:hover  {
+  background: lighten(#17A697, 10%);
 }
 
 #recipe-functions {

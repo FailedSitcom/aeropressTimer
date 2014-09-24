@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :require_user
+#  before_action :require_user
   before_action :set_recipe, only: [:show, :edit, :update, :destroy, :email]
   before_action :set_back_link, except: [:index]
   # GET /recipes

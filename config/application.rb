@@ -23,5 +23,7 @@ module AeropressTimer
     config.assets.precompile += %w( vendor/modernizr.js )
     config.action_view.field_error_proc = Proc.new {|html, instance| html}
     config.assets.initialize_on_precompile = false
+    config.assets.enabled = true
+    config.assets.paths << "#{Rails.root}/app/assets/audio"
   end
 end

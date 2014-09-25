@@ -1,18 +1,23 @@
+<audio>
+	<source src="<%= asset_path('alarm.mp3') %>"></source>
+</audio>
+
+
 <script>
-var timer = '<%= @recipe.seconds %>'
-
-
+  var timer = '<%= @recipe.seconds %>'
+  var audio = document.getElementsByTagName("audio")[0];
 </script>
+
+
 
 <script>
 jQuery(document).on("ready page:load", function() {
   $(function () {
 
-
     $('#defaultCountdown').countdown({
                               until: timer,
                               onExpiry: function() {
-                                  timerdone: console.log('timer has ended');
+                                  audio.play();
                               },
                               format: 'MS'});
 

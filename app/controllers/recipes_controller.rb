@@ -2,6 +2,16 @@ class RecipesController < ApplicationController
 #  before_action :require_user
   before_action :set_recipe, only: [:show, :edit, :update, :destroy, :email]
   before_action :set_back_link, except: [:index]
+  before_filter :require_permission, only: [:edit, :destroy]
+  #before_filter :require_permission, only: :destroy
+
+def require_permission
+  if current_user != Recipe.find(params[:id]).user
+    redirect_to recipe_path(@recipe), error: "You can only edit and delete your own recipes."
+    #Or do something else here
+  end
+end
+
   # GET /recipes
   # GET /recipes.json
   def index
@@ -43,7 +53,7 @@ class RecipesController < ApplicationController
   def update
     respond_to do |format|
       if @recipe.update(recipe_params)
-        format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
+        format.html { redirect_to @recipe, success: 'Recipe was successfully updated.' }
         format.json { render :show, status: :ok, location: @recipe }
       else
         format.html { render :edit }

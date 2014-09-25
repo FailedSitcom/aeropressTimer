@@ -7,11 +7,17 @@ var timer = '<%= @recipe.seconds %>'
 <script>
 jQuery(document).on("ready page:load", function() {
   $(function () {
-    $('#defaultCountdown').countdown({until: timer, format: 'MS'});
 
 
+    $('#defaultCountdown').countdown({
+                              until: timer,
+                              onExpiry: function() {
+                                  timerdone: console.log('timer has ended');
+                              },
+                              format: 'MS'});
 
     $('#defaultCountdown').countdown('pause')
+
 
     $("#pause").click(function() {
       $('#defaultCountdown').countdown('toggle')
@@ -21,6 +27,8 @@ jQuery(document).on("ready page:load", function() {
     $('#defaultCountdown').countdown('resume')
     setTimeout(function() { $('#defaultCountdown').countdown('option','until', timer)})
   });
+
+
 });
 
 </script>

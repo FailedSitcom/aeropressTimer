@@ -2,20 +2,30 @@
 
 
 <% if @recipes.size > 0 %>
-  <ul class="list recipes no-bullet">
-    <div class="row">
-      <div class="small-4 columns truncate">Title</div>
-      <div class="small-4 columns truncate">Coffee</div>
-      <div class="small-4 columns truncate">Water</div>
-    </div>
+
+  <div class="row">
+    <div class="small-4 small-cen columns truncate"><h5>Title</h5></div>
+    <div class="small-4 columns truncate"><h5>Coffee</h5></div>
+    <div class="small-4 columns truncate"><h5>Water</h5></div>
 
 
-    <div class="index">
-      <%= render partial: "recipe", collection: @recipes %>
-    </div>
 
 
-  </ul>
+    <ul class="list no-bullet">
+      <% if logged_in? %>
+        <div class="small-12 columns truncate index-header"><h4>Your recipes</h4></div>
+        <div class="index">
+          <%= render partial: "recipe", collection: current_user.recipes %>
+        </div>
+      <% end %>
+
+      <div class="small-12 columns truncate index-header"><h4>All recipes</h4></div>
+      <div class="index">
+        <%= render partial: "recipe", collection: @recipes.sort { |a,b| a.title.downcase <=> b.title.downcase } %>
+      </div>
+    </ul>
+  </div>
+
 
 <% else %>
   <%= render partial: 'blank_slate' %>

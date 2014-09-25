@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'pages#home'
+  root 'recipes#index'
 
 
 end

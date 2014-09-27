@@ -17,7 +17,7 @@ describe "Creating recipes" do
     fill_in "Title", with: options[:title]
     fill_in "Coffee", with: options[:coffee]
     fill_in "Water", with: options[:water]
-    fill_in "Seconds", with: options[:seconds]
+    fill_in "Brewing time (seconds)", with: options[:seconds]
     fill_in "Description", with: options[:description]
     click_button "Save"
   end

@@ -136,9 +136,34 @@
 }
 
 .index-header {
-  padding-top: 25px;
+  padding-top: 10px;
 }
 
-.row li {
-  padding-top: 10px;
+.title-index {
+  background: #D98723;
+}
+
+.title-list {
+  border-left: 2px solid #D98723;
+}
+
+.coffee-index {
+  background: #402718;
+
+}
+
+ul h4 {
+  font: #FFF;
+}
+
+.coffee-list {
+  border-left: 2px solid #402718;
+}
+
+.water-index {
+  background: #17A697;
+}
+
+.water-list {
+  border-left: 2px solid #17A697;
 }

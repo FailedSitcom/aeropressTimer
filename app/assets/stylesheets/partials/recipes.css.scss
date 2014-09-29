@@ -63,8 +63,9 @@
 }
 
 .description {
-  padding: 15px 10px 100px 10px;
+  padding: 15px 10px 50px 10px;
   background: #FFF;
+  line-height: 30px;
 }
 
 .recipe h3 {
@@ -165,8 +166,4 @@
 li {
   padding: 8px 0;
   background: #fff;
-}
-
-.description {
-  line-height: 30px;
 }

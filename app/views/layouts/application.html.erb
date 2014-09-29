@@ -30,9 +30,9 @@
   </div>
 
   <footer class="row global-footer">
-    <div class="small-6 medium-8 text-center medium-centered large-6 columns">
+    <div class="small-6 medium-8 small-push-3 medium-push-0 text-center medium-centered large-6 columns">
       <% if logged_in? %>
-        <%= link_to "Settings", edit_user_path(current_user) %>
+        <%= link_to "Settings", edit_user_path(current_user) %> - <%= link_to "About", pages_about_path %>
       <% else %>
         <%= render partial: 'layouts/header_logged_out' %>
       <% end %>

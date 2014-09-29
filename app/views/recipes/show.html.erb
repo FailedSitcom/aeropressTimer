@@ -1,40 +1,36 @@
-<audio>
-	<source src="<%= asset_path('alarm.mp3') %>"></source>
-</audio>
-
+<audio src="<%= asset_path('alarm.mp3') %>"></audio>
 
 <script>
-  var timer = '<%= @recipe.seconds %>'
-  var audio = document.getElementsByTagName("audio")[0];
-</script>
+var timer = '<%= @recipe.seconds %>'
+var audio = document.getElementsByTagName("audio")[0];
 
 
 
-<script>
 jQuery(document).on("ready page:load", function() {
-  $(function () {
 
-    $('#defaultCountdown').countdown({
-                              until: timer,
-                              onExpiry: function() {
-                                  audio.play();
-                              },
-                              format: 'MS'});
+	$(function () {
 
-    $('#defaultCountdown').countdown('pause')
+		$('#defaultCountdown').countdown({
+															until: timer,	format: 'MS'});
+
+		$('#defaultCountdown').countdown('pause')
 
 
-    $("#pause").click(function() {
-      $('#defaultCountdown').countdown('toggle')
-    });
-  });
-  $( "#start" ).click(function() {
-    $('#defaultCountdown').countdown('resume')
-    setTimeout(function() { $('#defaultCountdown').countdown('option','until', timer)})
-  });
+		$("#pause").click(function() {
+			$('#defaultCountdown').countdown('toggle')
+		});
+	});
+	$( "#start" ).click(function() {
+		setTimeout(function(){audio.play()}, timer * 1000);
+		$('#defaultCountdown').countdown('resume')
+		setTimeout(function() { $('#defaultCountdown').countdown('option','until', timer)})
+	});
 
 
 });
+
+
+
 
 </script>
 

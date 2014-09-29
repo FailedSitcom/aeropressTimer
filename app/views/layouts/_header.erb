@@ -1,14 +1,17 @@
 <div class="small-4 columns header-icon">
-
   <% if @go_back_link_to %>
     <%= link_to "Back", @go_back_link_to, class: "icon-arrow-left hide-text" %>
   <% else %>
-  <%= link_to "Sign Out", logout_path, method: :delete, class: "icon-signout hide-text" %>
+    <% if logged_in? %>
+      <%= link_to "Sign Out", logout_path, method: :delete, class: "icon-signout hide-text" %>
+    <% end %>
   <% end %>
 </div>
 <div class="small-4 columns">
   <h1 class="logo"><%= link_to "aeropressTimer", recipes_path, class: "hide-text" %></h1>
 </div>
 <div class="small-4 columns header-icon">
-  <%= new_recipe_link %>
+  <% if logged_in? %>
+    <%= new_recipe_link %>
+  <% end %>
 </div>

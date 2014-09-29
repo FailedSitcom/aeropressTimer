@@ -1,3 +1,4 @@
+
 .recipes li a {
   display: block;
   padding: 0.4em 1em 0.4em 0em;
@@ -8,8 +9,8 @@
   color: rgb(64, 39, 24);
   border: 1px solid rgb(64, 39, 24);
   &.alert {
-    border-color: red;
-    color: red;
+    border-color: $red;
+    color: $red;
   }
 }
 
@@ -136,34 +137,32 @@
 }
 
 .index-header {
-  padding-top: 10px;
+  font-size: 2em;
+  background: #f2dcb3;
+  padding: 20px 0;
 }
 
 .title-index {
   background: #D98723;
 }
 
-.title-list {
-  border-left: 2px solid #D98723;
+.title-index h4 {
+  font: white;
 }
 
 .coffee-index {
   background: #402718;
-
 }
 
-ul h4 {
-  font: #FFF;
-}
-
-.coffee-list {
-  border-left: 2px solid #402718;
+.ul h4 {
+  font: red;
 }
 
 .water-index {
   background: #17A697;
 }
 
-.water-list {
-  border-left: 2px solid #17A697;
+li {
+  padding: 8px 0;
+  background: #fff;
 }

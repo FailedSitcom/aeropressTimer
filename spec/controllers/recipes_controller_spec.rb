@@ -159,7 +159,6 @@ describe RecipesController do
   describe "DELETE destroy" do
     it "destroys the requested recipe" do
       recipe = Recipe.create! valid_attributes
-      if 
       expect {
         delete :destroy, {:id => recipe.to_param}, valid_session
       }.to change(Recipe, :count).by(-1)

@@ -18160,6 +18160,10 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 
 }).call(this);
 (function() {
+
+
+}).call(this);
+(function() {
   $(document).ready(function() {
     return $('.recipe-title').on('click', function(event) {
       var $functions;

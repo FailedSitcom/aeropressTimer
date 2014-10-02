@@ -3,7 +3,7 @@
 <script>
 var timer = '<%= @recipe.seconds %>'
 var audio = document.getElementsByTagName("audio")[0];
-
+var timeout;
 
 
 jQuery(document).on("ready page:load", function() {
@@ -15,19 +15,20 @@ jQuery(document).on("ready page:load", function() {
 
 		$('#defaultCountdown').countdown('pause')
 
+		$( "#start" ).click(function() {
+			window.clearTimeout(timeout);
+			timeout = window.setTimeout(function(){audio.play()}, timer * 1000);
+			$('#defaultCountdown').countdown('resume')
+			setTimeout(function() { $('#defaultCountdown').countdown('option','until', timer)})
+		});
 
 		$("#pause").click(function() {
+			window.clearTimeout(timeout);
 			$('#defaultCountdown').countdown('toggle')
 		});
-	});
-	$( "#start" ).click(function() {
-		
-		setTimeout(function(){audio.play()}, timer * 1000);
-		$('#defaultCountdown').countdown('resume')
-		setTimeout(function() { $('#defaultCountdown').countdown('option','until', timer)})
-	});
 
 
+	});
 });
 
 

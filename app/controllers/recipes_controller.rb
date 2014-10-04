@@ -3,6 +3,10 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy, :email]
   before_action :set_back_link, except: [:index]
   before_filter :require_permission, only: [:edit, :destroy]
+<<<<<<< HEAD
+=======
+  #before_filter :require_permission, only: :destroy
+>>>>>>> c4f1582847aa778f88d0da0a7f66e578666aa6ca
 
 def require_permission
   if current_user != Recipe.find(params[:id]).user

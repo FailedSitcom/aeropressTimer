@@ -1,4 +1,5 @@
 class Notifier < ActionMailer::Base
+
   default :from => "hello@coffeefilter.me"
 
   def password_reset(user)
